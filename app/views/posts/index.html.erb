@@ -1,0 +1,12 @@
+<h1 align="center">게시판 리스트</h1>
+
+<% @posts.each do |t| %>
+    제목 : <%= t.title %> <br>
+    내용 : <%= t.context %> <br>
+    <a href="/posts/show/<%= t.id %>">열람</a> / <a href="/posts/edit/<%= t.id %>">수정</a> / <a href="/posts/destroy/<%= t.id %>">삭제</a>
+    <hr>
+<% end %>
+
+<div style="text-align: right;">
+    <a href="/posts/new" class="btn btn-primary">글쓰기</a>
+</div>
