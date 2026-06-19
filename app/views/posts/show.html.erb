@@ -1,0 +1,66 @@
+<div class="p-3">
+    <h1>게시글 내용</h1>
+
+    <%# 실제 게시글 내용 %>
+    <div class="pt-2 pb-2 text-muted d-flex justify-content-between border-bottom">
+        <div>작성자: <%= @post.user.email %></div>
+        <div>작성일: <%= @post.created_at.strftime("%Y-%m-%d") %></div>
+    </div>
+
+    <div class="pt-2 pb-2 text-muted border-bottom">
+        <%= @post.title %>
+    </div>
+
+    <div class="pt-2 pb-2 border-bottom" style="min-height: 200px;">
+        <%= @post.content %>
+    </div>
+
+    <%# 수정/삭제/목록 %>
+    <% if user_signed_in? && @post.user_id == current_user.id %>
+        <div class="pt-2 d-flex justify-content-between">
+            <div class="d-flex gap-3">
+                <div class="padding-2">
+                    <a href="/posts/edit/<%= @post.id %>" class="btn btn-primary">수정하기</a>
+                </div>
+                <div class="padding-2">
+                    <a href="/posts/destroy/<%= @post.id %>" class="btn btn-danger">삭제하기</a>
+                </div>
+            </div>
+            <div class="padding-2">
+                <a href="/" class="btn btn-info">게시글 목록</a>
+            </div>
+        </div>
+    <% else %>
+        <div class="padding-2 mt-2">
+            <a href="/" class="btn btn-info">게시글 목록</a>
+        </div>
+    <% end %>
+
+
+    <%# 댓글 %>
+    <% if user_signed_in? && @post.user_id == current_user.id %>
+        <div class="pt-2">
+            <form action="/comments/create/<%= @post.id %>" class="d-flex gap-2" method="POST">
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+                <textarea name="input_comment" class="flex-grow-1" rows="3" placeholder="댓글을 입력하세요."></textarea>
+                <button type="submit" class="btn btn-primary">
+                    전송
+                </button>
+            </form>
+        </div>
+    <% end %>
+    <ul class="list-group list-group-flush">
+        <% @post.comments.each do |comment| %>
+            <li class="list-group-item">
+                <div class="pt-2 pb-2 d-flex justify-content-between">
+                    <div>작성자: <%= comment.user.email %></div>
+                    <div class="text-muted "><%= comment.created_at.strftime("%Y-%m-%d %H:%M:%S") %></div>
+                </div>
+                <div>
+                    <%= comment.content %>
+                </div>
+            </li>
+        <% end %>
+    </ul>
+</div>

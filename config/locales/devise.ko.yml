@@ -1,0 +1,67 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ko:
+  devise:
+    confirmations:
+      confirmed: "이메일 주소가 성공적으로 인증되었습니다."
+      send_instructions: "몇 분 안에 이메일 주소를 인증하는 방법이 담긴 안내 메일을 받게 됩니다."
+      send_paranoid_instructions: "이메일 주소가 등록되어 있다면, 몇 분 안에 인증 안내 메일을 받게 됩니다."
+    failure:
+      already_authenticated: "이미 로그인되어 있습니다."
+      inactive: "아직 활성화되지 않은 계정입니다."
+      invalid: "잘못된 %{authentication_keys} 또는 비밀번호입니다."
+      locked: "계정이 잠겨 있습니다."
+      last_attempt: "계정이 잠기기 전 마지막 한 번의 시도입니다."
+      not_found_in_database: "잘못된 %{authentication_keys} 또는 비밀번호입니다."
+      timeout: "세션이 만료되었습니다. 다시 로그인해 주세요."
+      unauthenticated: "계속하려면 로그인 또는 회원가입이 필요합니다."
+      unconfirmed: "계속하려면 이메일 인증이 필요합니다."
+    mailer:
+      confirmation_instructions:
+        subject: "이메일 인증 안내"
+      reset_password_instructions:
+        subject: "비밀번호 재설정 안내"
+      unlock_instructions:
+        subject: "계정 잠금 해제 안내"
+      email_changed:
+        subject: "이메일 변경 안내"
+      password_change:
+        subject: "비밀번호 변경 안내"
+    omniauth_callbacks:
+      failure: "%{kind} 계정으로 인증하지 못했습니다. (이유: \"%{reason}\")"
+      success: "%{kind} 계정으로 성공적으로 인증되었습니다."
+    passwords:
+      no_token: "비밀번호 재설정 이메일을 통해서만 이 페이지에 접근할 수 있습니다. 링크가 전체인지 확인해 주세요."
+      send_instructions: "몇 분 안에 비밀번호 재설정 안내 메일을 받게 됩니다."
+      send_paranoid_instructions: "이메일이 존재한다면 비밀번호 재설정 링크를 곧 받게 됩니다."
+      updated: "비밀번호가 성공적으로 변경되었습니다. 현재 로그인된 상태입니다."
+      updated_not_active: "비밀번호가 성공적으로 변경되었습니다."
+    registrations:
+      destroyed: "회원 탈퇴가 완료되었습니다. 다시 만날 수 있기를 바랍니다."
+      signed_up: "회원가입이 완료되었습니다. 환영합니다!"
+      signed_up_but_inactive: "회원가입은 완료되었지만 계정이 활성화되지 않아 로그인할 수 없습니다."
+      signed_up_but_locked: "회원가입은 완료되었지만 계정이 잠겨 있어 로그인할 수 없습니다."
+      signed_up_but_unconfirmed: "인증 이메일이 발송되었습니다. 링크를 클릭해 계정을 활성화해 주세요."
+      update_needs_confirmation: "계정이 업데이트되었지만 새 이메일 주소 확인이 필요합니다. 인증 메일을 확인해 주세요."
+      updated: "계정 정보가 성공적으로 업데이트되었습니다."
+      updated_but_not_signed_in: "계정이 업데이트되었지만 비밀번호 변경으로 인해 다시 로그인해야 합니다."
+    sessions:
+      signed_in: "로그인에 성공했습니다."
+      signed_out: "로그아웃되었습니다."
+      already_signed_out: "이미 로그아웃된 상태입니다."
+    unlocks:
+      send_instructions: "몇 분 안에 계정 잠금 해제 안내 메일을 받게 됩니다."
+      send_paranoid_instructions: "계정이 존재한다면 잠금 해제 안내 메일을 받게 됩니다."
+      unlocked: "계정 잠금이 해제되었습니다. 로그인해 주세요."
+  errors:
+    messages:
+      confirmation: "비밀번호 확인이 일치하지 않습니다"
+      already_confirmed: "이미 인증된 상태입니다. 로그인해 주세요."
+      confirmation_period_expired: "%{period} 내에 인증해야 합니다. 다시 요청해 주세요."
+      expired: "만료되었습니다. 다시 요청해 주세요."
+      not_found: "찾을 수 없습니다."
+      not_locked: "잠겨 있지 않습니다."
+      not_saved:
+        one: "1개의 오류로 인해 %{resource}를 저장할 수 없습니다:"
+        other: "%{count}개의 오류로 인해 %{resource}를 저장할 수 없습니다:"
+      too_short: "너무 짧습니다 (최소 %{count}자)."
