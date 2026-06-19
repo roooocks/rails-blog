@@ -3,7 +3,7 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-아주 기본적인 Ruby on Rails8의 CRUD 게시글
+아주 기본적인 Ruby on Rails8의 CRUD 게시글 [따라한 블로그 링크](https://kbs4674.tistory.com/11)
 
 * Ruby version = 3.4.8
 * Database = MySQL
